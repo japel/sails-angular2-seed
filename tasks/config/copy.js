@@ -33,7 +33,7 @@ module.exports = function(grunt) {
     dependencies: {
       files: [{
         expand: true,
-        cwd: './',
+        cwd: 'node_modules',
         src: require('../pipeline').clientDependencies,
         dest: '.tmp/public/dependencies'
       }]

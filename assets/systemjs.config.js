@@ -6,7 +6,7 @@
   System.config({
     paths: {
       // paths serve as alias
-      'npm:': '.tmp/public/dependencies/'
+      'npm:': 'dependencies/'
     },
     // map tells the System loader where to look for things
     map: {

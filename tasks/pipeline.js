@@ -30,9 +30,12 @@
   // of dealing with serving all the files in node_modules, we copy over the files
   // we need to a public folder.
   var clientDependencies = [
-    '@angular/**/**',
-    'rxjs/**/**',
-    'angular-in-memory-web-api/**/**'
+    '@angular/**/**/**',
+    'rxjs/**/**/**',
+    'angular-in-memory-web-api/**/**/**',
+    'core-js/**/**/**',
+    'zone.js/**/**/**',
+    'systemjs/**/**/**'
   ];
 
 
@@ -170,4 +173,7 @@
    }
    return require('path').join('assets/',tplPath);
  });
+
+ // Export client dependencies
+ module.exports.clientDependencies = clientDependencies;
 
