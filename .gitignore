@@ -130,3 +130,5 @@ nbproject
 .node_history
 dump.rdb
 
+.tscache
+tscommand**.txt
