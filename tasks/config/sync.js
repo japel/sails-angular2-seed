@@ -13,13 +13,30 @@
 module.exports = function(grunt) {
 
   grunt.config.set('sync', {
-    dev: {
+    raw: {
       files: [{
+        expand: true,
         cwd: './assets',
         src: ['**/*.!(coffee|less)'],
-        dest: '.tmp/public'
+        dest: '.tmp/public/raw'
       }]
-    }
+    },
+    compiled: {
+      files: [{
+        expand: true,
+        cwd: '.tmp/public/raw',
+        src: ['**/*.!(ts|d.ts|component.ts)'],
+        dest: '.tmp/public/compiled'
+      }]
+    },
+    dependencies: {
+      files: [{
+        expand: true,
+        cwd: 'node_modules',
+        src: require('../pipeline').clientDependencies,
+        dest: '.tmp/public/dependencies'
+      }]
+    },
   });
 
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

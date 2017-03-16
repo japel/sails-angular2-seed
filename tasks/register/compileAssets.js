@@ -10,9 +10,9 @@
 module.exports = function(grunt) {
   grunt.registerTask('compileAssets', [
     'clean',
-    'copy:raw',
+    'sync:raw',
     'ts',
-    'copy:compiled',
-    'copy:dependencies'
+    'sync:compiled',
+    'sync:dependencies'
   ]);
 };
