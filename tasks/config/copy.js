@@ -14,22 +14,30 @@
 module.exports = function(grunt) {
 
   grunt.config.set('copy', {
-    dev: {
+    raw: {
       files: [{
         expand: true,
         cwd: './assets',
         src: ['**/*.!(coffee|less)'],
-        dest: '.tmp/public'
+        dest: '.tmp/public/raw'
       }]
     },
-    build: {
+    compiled: {
       files: [{
         expand: true,
-        cwd: '.tmp/public',
-        src: ['**/*'],
-        dest: 'www'
+        cwd: '.tmp/public/raw',
+        src: ['**/*.!(ts|d.ts|component.ts)'],
+        dest: '.tmp/public/compiled'
       }]
-    }
+    },
+    dependencies: {
+      files: [{
+        expand: true,
+        cwd: './',
+        src: require('../pipeline').clientDependencies,
+        dest: '.tmp/public/dependencies'
+      }]
+    },
   });
 
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
