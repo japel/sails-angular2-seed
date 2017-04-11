@@ -1,5 +1,5 @@
 {
-  "name": "quickstart",
+  "name": "sails-angular2-seed",
   "private": true,
   "version": "0.0.0",
   "description": "a Sails application",
@@ -21,7 +21,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/particlebanana/quickstart.git"
+    "url": "git://github.com/sailshq/sails-angular2-seed.git"
   },
   "author": "particlebanana",
   "license": "",
